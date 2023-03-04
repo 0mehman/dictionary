@@ -7,7 +7,7 @@ import java.util.TreeMap;
 
 public final class AzeToEng {
 
-    enum Functions {AXTAR, GOSTER, QAYIT, CIX}
+    enum Functions {AXTAR, GOSTER, GERI, CIX}
 
     static Map<String, String> dictionary = new TreeMap<>();
 
@@ -18,7 +18,7 @@ public final class AzeToEng {
         System.out.println("\nChoose fields\n" +
                 "Axtarılan söz üçün 'AXTAR' yaz\n" +
                 "Bütün sözləri görmək üçün 'GOSTER' yaz\n" +
-                "Əsas menuya qayıtmaq üçün 'QAYIT' yaz\n" +
+                "Əsas menuya qayıtmaq üçün 'GERI' yaz\n" +
                 "Proqramdan çıxmaq üçün 'CIX' yaz..\n");
         Functions type = Functions.valueOf(DictionaryApp.scan.next().toUpperCase());
 
@@ -29,7 +29,7 @@ public final class AzeToEng {
             case GOSTER:
                 ShowAll.showAllList(dictionary);
                 break;
-            case QAYIT:
+            case GERI:
                 DictionaryApp.chooseDictionaryType();
                 break;
             case CIX:
