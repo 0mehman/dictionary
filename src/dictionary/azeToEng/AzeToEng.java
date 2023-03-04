@@ -7,6 +7,8 @@ import java.util.TreeMap;
 
 public final class AzeToEng {
 
+    //Tercume programi oldugu ucun bir hissesi Azerbaycan dilinde verilmisdir
+
     enum Functions {AXTAR, GOSTER, GERI, CIX}
 
     static Map<String, String> dictionary = new TreeMap<>();
