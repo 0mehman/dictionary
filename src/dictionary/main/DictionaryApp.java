@@ -1,4 +1,4 @@
-package dictionary;
+package dictionary.main;
 
 import dictionary.azeToEng.AzeToEng;
 import dictionary.engToAze.EngToAze;

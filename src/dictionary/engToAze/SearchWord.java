@@ -1,6 +1,6 @@
 package dictionary.engToAze;
 
-import dictionary.DictionaryApp;
+import dictionary.main.DictionaryApp;
 
 import java.util.Map;
 

@@ -1,6 +1,6 @@
 package dictionary.azeToEng;
 
-import dictionary.DictionaryApp;
+import dictionary.main.DictionaryApp;
 
 import java.util.Map;
 import java.util.TreeMap;
