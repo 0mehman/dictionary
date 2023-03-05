@@ -15,5 +15,4 @@ final class UpdateWord {
         dictionary.put(key,translate);
         System.out.println(key + " - " + translate);
     }
-
 }
