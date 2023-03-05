@@ -10,8 +10,9 @@ final class UpdateWord {
 
     public static void update(Map<String, String> dictionary, String key) {
         System.out.println("Enter new translate");
-        dictionary.put(key, DictionaryApp.scan.next().toLowerCase());
-        System.out.println(key + " - " + dictionary.get(key));
-        EngToAze.engToAze();
+        DictionaryApp.scan.nextLine();
+        String translate = DictionaryApp.scan.nextLine().toLowerCase();
+        dictionary.put(key, translate);
+        System.out.println(key + " - " + translate);
     }
 }

@@ -5,8 +5,7 @@ public class Main {
         try {
             DictionaryApp.chooseDictionaryType();
         }catch (RuntimeException ex){
-            System.out.println(ex.getMessage());
+            System.err.println(ex.getMessage());
         }
-
     }
 }

@@ -12,6 +12,5 @@ final class ShowAll {
         for (Map.Entry<String, String> entry : dictionary.entrySet()) {
             System.out.println(entry.getKey() + " - " + entry.getValue());
         }
-        EngToAze.engToAze();
     }
 }

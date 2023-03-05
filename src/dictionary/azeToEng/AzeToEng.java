@@ -7,9 +7,9 @@ import java.util.TreeMap;
 
 public final class AzeToEng {
 
-    //Tercume programi oldugu ucun bir hissesi Azerbaycan dilinde verilmisdir
+    //Tərcümə proqramı olduğu üçün proqramın bu hissəsi Azərbaycanca verilmişdir...
 
-    enum Functions {AXTAR, GOSTER, GERI, CIX}
+    enum Functions {SEARCH, ADD, SHOW, RETURN, EXIT}
 
     static Map<String, String> dictionary = new TreeMap<>();
 
@@ -17,28 +17,33 @@ public final class AzeToEng {
     }
 
     public static void azeToEng() throws IllegalArgumentException {
-        System.out.println("\nChoose fields\n" +
-                "Axtarılan söz üçün 'AXTAR' yaz\n" +
-                "Bütün sözləri görmək üçün 'GOSTER' yaz\n" +
-                "Əsas menuya qayıtmaq üçün 'GERI' yaz\n" +
-                "Proqramdan çıxmaq üçün 'CIX' yaz..\n");
-        Functions type = Functions.valueOf(DictionaryApp.scan.next().toUpperCase());
-
-        switch (type) {
-            case AXTAR:
-                SearchWord.search(dictionary);
-                break;
-            case GOSTER:
-                ShowAll.showAllList(dictionary);
-                break;
-            case GERI:
-                DictionaryApp.chooseDictionaryType();
-                break;
-            case CIX:
-                System.out.println("Program sona çatdı...");
-                System.exit(0);
-            default:
-                throw new IllegalArgumentException("Düzgün melumat daxil edin");
+        while (true) {
+            System.out.println("\nChoose fields\n" +
+                    "Axtarılan söz üçün 'SEARCH' yaz\n" +
+                    "Yeni söz əlavə etmək üçün 'ADD' yaz\n" +
+                    "Bütün sözləri görmək üçün 'SHOW' yaz\n" +
+                    "Əsas menuya qayıtmaq üçün 'RETURN' yaz\n" +
+                    "Proqramdan çıxmaq üçün 'EXIT' yaz..\n");
+            Functions type = Functions.valueOf(DictionaryApp.scan.next().toUpperCase());
+            switch (type) {
+                case SEARCH:
+                    SearchWord.search(dictionary);
+                    break;
+                case ADD:
+                    AddWord.addWord(dictionary);
+                    break;
+                case SHOW:
+                    ShowAll.showAllList(dictionary);
+                    break;
+                case RETURN:
+                    DictionaryApp.chooseDictionaryType();
+                    break;
+                case EXIT:
+                    System.out.println("Proqram sona çatdı...");
+                    System.exit(0);
+                default:
+                    throw new IllegalArgumentException("Düzgün məlumat daxil edin");
+            }
         }
     }
 }

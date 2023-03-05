@@ -5,39 +5,36 @@ import dictionary.main.DictionaryApp;
 import java.util.Map;
 
 final class SearchWord {
-    enum SearchFields {YENILE, SIL, QAYIT, CIX}
+    enum SearchFields {UPDATE, DELETE, RETURN, EXIT}
 
     private SearchWord() {
     }
 
     public static void search(Map<String, String> dictionary) throws IllegalArgumentException {
-
         String key = GetWord.getWord(dictionary);
-        System.out.println("\nSeçilmiş əməliyyatı daxil edin\n" +
-                "Mövcud tərcüməni yeniləmək üçün 'YENILE'\n" +
-                "Cari sözü silmək üçün 'SİL'\n" +
-                "Əsas menuya qayıtmaq üçün 'QAYIT'\n" +
-                "Proqramdan çıxmaq üçün 'CIX' ...yaz..\n");
+        if (key == null) return;
+        System.out.println(key+" - "+dictionary.get(key));
+        System.out.println("\nMövcud tərcüməni yeniləmək üçün 'UPDATE':\n" +
+                "Cari sözü silmək üçün 'DELETE':\n" +
+                "Əsas menuya qayıtmaq üçün 'RETURN':\n" +
+                "Proqramdan çıxmaq üçün 'EXIT': daxil edin..\n");
         SearchFields searched = SearchFields.valueOf(DictionaryApp.scan.next().toUpperCase());
 
         switch (searched) {
-            case YENILE:
+            case UPDATE:
                 UpdateWord.update(dictionary, key);
                 break;
-            case SIL:
+            case DELETE:
                 System.out.println(key + " sözü silindi");
                 dictionary.remove(key);
-            case QAYIT:
-                AzeToEng.azeToEng();
-                break;
-            case CIX:
+            case RETURN:
+                return;
+            case EXIT:
                 System.out.println("Programın sonu...");
                 System.exit(0);
                 break;
             default:
                 throw new IllegalArgumentException("Düzgün melumat daxil edin");
         }
-
-
     }
 }
