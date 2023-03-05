@@ -9,7 +9,7 @@ final class UpdateWord {
     }
 
     public static void update(Map<String, String> dictionary, String key) {
-        System.out.println("Yeni tərcümıni daxil edin:");
+        System.out.println("Yeni tərcüməni daxil edin:");
         DictionaryApp.scan.nextLine();
         String translate = DictionaryApp.scan.nextLine().toLowerCase();
         dictionary.put(key,translate);

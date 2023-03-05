@@ -18,8 +18,7 @@ public final class AzeToEng {
 
     public static void azeToEng() throws IllegalArgumentException {
         while (true) {
-            System.out.println("\nChoose fields\n" +
-                    "Axtarılan söz üçün 'SEARCH' yaz\n" +
+            System.out.println("\nAxtarılan söz üçün 'SEARCH' yaz\n" +
                     "Yeni söz əlavə etmək üçün 'ADD' yaz\n" +
                     "Bütün sözləri görmək üçün 'SHOW' yaz\n" +
                     "Əsas menuya qayıtmaq üçün 'RETURN' yaz\n" +

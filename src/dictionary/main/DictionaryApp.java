@@ -23,7 +23,6 @@ public final class DictionaryApp {
             case ENG:
                 EngToAze.engToAze();
                 break;
-
         }
     }
 }
