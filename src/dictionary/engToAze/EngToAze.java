@@ -1,5 +1,6 @@
 package dictionary.engToAze;
 
+import dictionary.main.DictionariList;
 import dictionary.main.DictionaryApp;
 
 import java.util.Map;
@@ -40,6 +41,7 @@ public final class EngToAze {
                     break;
                 case EXIT:
                     System.out.println("Program ended...");
+                    DictionariList.writeToFile(dictionary);
                     System.exit(0);
                 default:
                     throw new IllegalArgumentException("Enter correct field");
